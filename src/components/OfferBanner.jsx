@@ -4,16 +4,16 @@ import React from "react";
 
 const OfferBanner = ({ image }) => {
   return (
-    <div className="w-full flex justify-center">
+    <div className="w-full flex justify-center px-4">
 
       <img
-        src={image}
+        src={image}       // example: "/packages.jpeg"
         alt="Offer Banner"
         className="
           w-full
           max-w-7xl
 
-          /* Height responsive */
+          /* Responsive height */
           h-[200px]        /* mobile */
           sm:h-[260px]     /* small devices */
           md:h-[330px]     /* tablets */
@@ -21,12 +21,11 @@ const OfferBanner = ({ image }) => {
           xl:h-[480px]     /* big screens */
 
           /* Fit behavior */
-          object-contain   /* mobile: perfect image fit */
-          sm:object-cover  /* bigger screens: premium cover */
+          object-contain    /* mobile: no crop */
+          sm:object-cover   /* desktop/tablet: premium full cover */
 
           rounded-xl
           shadow-md
-          mx-auto
           transition
           duration-300
           hover:scale-[1.01]

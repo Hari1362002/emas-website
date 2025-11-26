@@ -9,58 +9,55 @@ import "swiper/css/pagination";
 
 const HeroSlider = () => {
   const slides = [
-    "/src/assets/1.jpeg",
-    "/src/assets/2.jpeg",
-    "/src/assets/3.jpeg",
-    "/src/assets/4.jpeg",
-    "/src/assets/5.jpeg",
-    "/src/assets/6.jpeg",
-    "/src/assets/7.jpeg",
-    "/src/assets/8.jpeg",
-    "/src/assets/9.jpeg",
-    "/src/assets/10.jpeg",
-    "/src/assets/11.jpeg",
-    "/src/assets/12.jpeg",
-    "/src/assets/13.jpeg",
-    "/src/assets/14.jpeg",
+    "/assets/1.jpeg",
+    "/assets/2.jpeg",
+    "/assets/3.jpeg",
+    "/assets/4.jpeg",
+    "/assets/5.jpeg",
+    "/assets/6.jpeg",
+    "/assets/7.jpeg",
+    "/assets/8.jpeg",
+    "/assets/9.jpeg",
+    "/assets/10.jpeg",
+    "/assets/11.jpeg",
+    "/assets/12.jpeg",
+    "/assets/13.jpeg",
+    "/assets/14.jpeg",
   ];
 
   return (
-    <div className="w-full backdrop-blur-md bg-white/60 rounded-xl">
+    <div className="w-full rounded-xl overflow-hidden bg-white">
 
-      {/* Custom Fancy Arrows */}
+      {/* ==== CUSTOM ARROWS ==== */}
       <style>{`
-        /* Hide arrows until hover */
         .swiper-button-next,
         .swiper-button-prev {
           opacity: 0;
-          transition: opacity 0.25s ease;
-          width: auto;
-          height: auto;
+          transition: opacity 0.3s ease;
         }
 
-        /* Show arrows on hover */
+        /* Show on hover */
         .swiper:hover .swiper-button-next,
         .swiper:hover .swiper-button-prev {
           opacity: 1;
         }
 
-        /* Fancy EMAS Arrows */
+        /* Arrow Icons */
         .swiper-button-next::after {
           content: '❯';
-          font-size: 32px !important;
+          font-size: 34px;
           font-weight: 600;
-          color: #007a3d !important;
+          color: #007a3d;
         }
 
         .swiper-button-prev::after {
           content: '❮';
-          font-size: 32px !important;
+          font-size: 34px;
           font-weight: 600;
-          color: #007a3d !important;
+          color: #007a3d;
         }
 
-        /* Mobile: Always Visible */
+        /* Mobile — always visible */
         @media (max-width: 640px) {
           .swiper-button-next,
           .swiper-button-prev {
@@ -68,36 +65,35 @@ const HeroSlider = () => {
           }
           .swiper-button-next::after,
           .swiper-button-prev::after {
-            font-size: 24px !important;
+            font-size: 26px;
           }
         }
       `}</style>
 
+      {/* ==== MAIN SWIPER ==== */}
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 2500 }}
-        loop={true}
+        loop
         className="
-          h-[280px]    /* Mobile */
-          sm:h-[340px] /* Tablets */
-          md:h-[480px] /* Medium screens */
-          lg:h-[560px] /* Large screens */
-          rounded-xl 
-          overflow-hidden
+          h-[260px]        /* very small phones */
+          sm:h- [320px]     /* phones */
+          md:h-[450px]     /* tablets */
+          lg:h-[540px]     /* large desktop */
+          xl:h-[620px]     /* big screen */
         "
       >
-        {slides.map((img, index) => (
-          <SwiperSlide key={index}>
+        {slides.map((img, i) => (
+          <SwiperSlide key={i}>
             <img
               src={img}
-              alt={`Slide ${index + 1}`}
+              alt={`Slide ${i + 1}`}
               className="
-                w-full 
-                h-full 
-                object-contain      /* Perfect fit for mobile */
-                sm:object-cover     /* Full style on larger screens */
+                w-full h-full 
+                object-contain     /* Mobile — no cut */
+                sm:object-cover    /* Tablet/Desktop — full fit */
                 bg-white
               "
             />
