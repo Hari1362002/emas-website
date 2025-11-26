@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-emas-green: #007a3d;
+  --color-emas-light: #d5f3e5;
+  --color-emas-dark: #005429;
+}
+* {
+   @apply transition-all duration-200 ease-in-out;
+}
+
