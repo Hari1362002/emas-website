@@ -111,14 +111,13 @@ Please change the parent <Route path="${T}"> to <Route path="${T==="/"?"*":`${T}
 
           /* Responsive height */
           h-[200px]        /* mobile */
-          sm:h-[260px]     /* small devices */
-          md:h-[330px]     /* tablets */
-          lg:h-[420px]     /* laptop */
-          xl:h-[480px]     /* big screens */
+          sm:h-[260px]
+          md:h-[330px]
+          lg:h-[420px]
+          xl:h-[480px]
 
-          /* Fit behavior */
-          object-contain    /* mobile — no cropping */
-          sm:object-cover   /* desktop/tablet — premium layout */
+          object-contain
+          sm:object-cover
 
           rounded-xl
           shadow-md
